@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        /* Basic styles for the page */
+        body {
+            background-color: #8797f2;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav p {
+            background-color: #28629f; /* Blue */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff; /* White text for contrast */
+            font-size: 1.2rem;
+            margin: 0 20px;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        /* Style for images */
+        .zoom {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .zoom:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 100; /* Stay on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%; /* Image size */
+            max-width: 700px;
+            max-height: 80%;
+        }
+
+        /* Style for alt text */
+        .modal-alt {
+            text-align: center;
+            color: #004085; /* Dark Blue */
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Contact Form Styling */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .contact-form div {
+            margin-bottom: 15px;
+        }
+        
+        .contact-form label {
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        .contact-form button {
+            background-color: #007bff; /* Blue */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        /* Button hover effect */
+        button:hover {
+            background-color: #0056b3; /* Darker blue */
+            transform: translateY(-3px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Input focus effect */
+        input:focus, textarea:focus {
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+            outline: none;
+        }
+
+        /* Centering sections */
+        section {
+            text-align: center;
+        }
+
+        /* New styles for image shapes */
+        #Place img, #Food img {
+            border-radius: 50%; /* Makes images circular */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+            margin: 15px;
+        }
+
+        /* Adjust the image dimensions */
+        #Place img, #Food img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover; /* Ensures images maintain aspect ratio within the circular frame */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #28629f; /* Blue */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation start here -->
+        <nav>
+            <p>
+                <a href="#about">About</a>
+                <a href="#Place">Favorite Place</a>
+                <a href="#Food">Favorite Food</a>
+                <a href="#contact">Contact</a>
+            </p>
+        </nav>
+        <!-- Navigation end here -->
+
+        <div style="text-align: center;">
+            <img src="C:\Users\Teacher\Desktop\Programing.html\x\My Self\freepik-professional-blue-yellow-call-now-real-estate-linkedin-banner-20241011063513P9ib.jpeg" width="900" height="300" alt="Hello there! I'm a Front-end Developer and aspiring App Developer.">
+            <h1>Hi, my name is John Philip</h1>
+            <p>Web Developer ! Designer ! Tech Enthusiast</p>
+        </div>
+        
+    </header>
+
+    <!-- Main Page content start here -->
+    <main>
+        <section id="about">
+            <h2 style="color: #007bff;">~ About Me ~</h2> <!-- Blue color for heading -->
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\My Self\IMG20240901124522.jpg" width="500" height="500" alt="Hello there! I'm a Front-end Developer and aspiring App Developer." onclick="openModal(this);">
+            <p>Hello there! I'm a Front-end Developer and aspiring App Developer.</p>
+        </section>
+        
+
+        <section id="Place">
+            <h2 style="color: #007bff;">~ Favorite Place ~</h2> <!-- Blue color for heading -->
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Place\photo0jpg.jpg" alt="Palawan" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Place\pexels-pixabay-51363-scaled.jpg" alt="France" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Place\Paris1.jpg" alt="Paris" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Place\Beach-1-resized.jpg" alt="Boracay" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\My Self\X3ouanBn.jpg" alt="Enchanted River" onclick="openModal(this);">
+        </section>
+
+        <section id="Food">
+            <h2 style="color: #007bff;">~ Favorite Food ~</h2> <!-- Blue color for heading -->
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Food\230383.jpg" alt="Spaghetti" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Food\93393012.jpg" alt="Lechon Manok" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Food\deecuisine-chicken-afritada-recipe.jpg" alt="Afritada" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Food\Facetune_06-10-2020-15-37-58-scaled.jpg" alt="Fried Chicken" onclick="openModal(this);">
+            <img class="zoom" src="C:\Users\Teacher\Desktop\Programing.html\x\Fav Food\pork-humba.jpg" alt="Pork Humba" onclick="openModal(this);">
+        </section>
+
+        <!-- Enhanced Contact Me Section -->
+        <section class="contact" id="contact" style="background: linear-gradient(135deg, #af2e2e, #f15d5d, #6f1010); padding: 50px 20px; border-radius: 15px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);">
+            <h2 style="color: #ffffff;">~ Contact Me ~</h2>
+            <form class="contact-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+    </main>
+
+    <!-- Modal for images -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" class="modal-alt"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 John Philip. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal script
+        function openModal(img) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
